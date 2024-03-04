@@ -266,8 +266,6 @@ body {
   margin: 0;
 }
 
-
-
 @media screen and (min-width: 600px) {
   .pet-description {
     font-size: 1rem;
@@ -439,7 +437,6 @@ textarea.form-field {
 
 /* Contact Form Styles */
 .form-overlay {
-  overflow-y: auto;
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(5px);
   position: fixed;
@@ -448,6 +445,9 @@ textarea.form-field {
   left: 0;
   right: 0;
   z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   visibility: hidden;
   opacity: 0;
   transform: scale(1.2);
@@ -461,7 +461,6 @@ textarea.form-field {
 }
 
 .form-overlay-inner {
-  position: relative;
   max-width: 880px;
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.07);
   background-color: #FFF;
@@ -469,40 +468,13 @@ textarea.form-field {
   flex: 1;
   align-self: center;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 340px 1fr;
 }
 
 .form-photo {
   order: 1;
   grid-row: 1;
   position: relative;
-  height: 210px;
-}
-
-.form-content {
-  padding: 38px 30px;
-}
-
-@media screen and (min-width: 745px) {
-
-  .form-overlay {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  }
-
-  .form-content {
-    padding: 38px 54px;
-    position: relative;
-  }
-
-  .form-overlay-inner {
-    grid-template-columns: 340px 1fr;
-  }
-
-  .form-photo {
-    height: auto;
-  }
 }
 
 .form-photo p {
@@ -538,10 +510,12 @@ textarea.form-field {
   justify-content: end;
 }
 
-
+.form-content {
+  padding: 38px 54px;
+  position: relative;
+}
 
 .close-form-overlay {
-  z-index: 101;
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -570,38 +544,4 @@ textarea.form-field {
 
 .pet-contact-btn:hover {
   opacity: 1;
-}
-
-.thank-you {
-  opacity: 0;
-  visibility: hidden;
-  z-index: 102;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  transition: all .33s ease-out;
-}
-
-.thank-you--visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-
-.thank-you p {
-  align-self: center;
-  font-size: 1.4rem;
-}
-
-.thank-you svg {
-  color: rgb(12, 189, 12);
-  position: relative;
-  top: 4px;
-  margin-right: 4px;
 }
